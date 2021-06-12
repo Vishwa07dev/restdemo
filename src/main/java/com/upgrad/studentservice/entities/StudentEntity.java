@@ -1,0 +1,87 @@
+package com.upgrad.studentservice.entities;
+
+import java.util.List;
+import java.util.Objects;
+
+
+public class StudentEntity {
+
+  private int id ;
+  private String name ;
+  private int age ;
+  private String gendre;
+  private String country ;
+  private List<String> hobbies ;
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public int getAge() {
+    return age;
+  }
+
+  public void setAge(int age) {
+    this.age = age;
+  }
+
+  public String getGendre() {
+    return gendre;
+  }
+
+  public void setGendre(String gendre) {
+    this.gendre = gendre;
+  }
+
+  public String getCountry() {
+    return country;
+  }
+
+  public void setCountry(String country) {
+    this.country = country;
+  }
+
+  public List<String> getHobbies() {
+    return hobbies;
+  }
+
+  public void setHobbies(List<String> hobbies) {
+    this.hobbies = hobbies;
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    StudentEntity that = (StudentEntity) o;
+    return id == that.id && age == that.age && Objects.equals(name, that.name) && Objects.equals(gendre, that.gendre)
+        && Objects.equals(country, that.country) && Objects.equals(hobbies, that.hobbies);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, name, age, gendre, country, hobbies);
+  }
+
+  @Override
+  public String toString() {
+    return "StudentEntity{" + "id=" + id + ", name='" + name + '\'' + ", age=" + age + ", gendre='" + gendre + '\''
+        + ", country='" + country + '\'' + ", hobbies=" + hobbies + '}';
+  }
+}
